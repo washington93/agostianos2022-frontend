@@ -13,4 +13,5 @@ import { QrcodeComponent } from './qrcode.component';
   declarations: [QrcodeComponent],
   exports: [QrcodeComponent]
 })
+
 export class QrcodeModule { }
