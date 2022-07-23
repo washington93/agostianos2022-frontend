@@ -1,0 +1,43 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "washington",
+      "avatar": "https://",
+      "moldura": "mago",
+      "pontuacao": [
+        {
+          "id": 1,
+          "pontos": 10
+        },
+        {
+          "id": 2,
+          "pontos": 20
+        }
+      ]
+    }
+  ],
+  "brincadeiras": [
+    {
+      "id": 1,
+      "nome": "Karaoke",
+      "descricao": "Karaoke",
+      "icone": "https://"
+    },
+    {
+      "id": 1,
+      "nome": "Caçada",
+      "descricao": "Caçar QRCode",
+      "icone": "https://"
+    }
+  ],
+  "easterEggs": [
+    {
+      "id": 1,
+      "pontuacao": 10,
+      "cargas": 3,
+      "descricao": "",
+      "icone": "https://"
+    }
+  ]
+}
