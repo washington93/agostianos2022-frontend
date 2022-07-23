@@ -1,7 +1,0 @@
-[build]
-  publish = "dist/anglify"
-  command = "ng build --prod --aot --build-optimizer --source-map"
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
