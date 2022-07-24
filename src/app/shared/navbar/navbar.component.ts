@@ -61,8 +61,8 @@ export class NavbarComponent implements OnInit {
 
   home: MenuItem[] = [
     {
-      name: 'Data',
-      path: 'data',
+      name: 'Sobre',
+      path: 'temporizador',
       icon: 'fa-database',
       type: 'section',
     },

@@ -1,7 +1,34 @@
 <app-navbar></app-navbar>
 <main class="container">
-  <section id="data">
-    <h1>Data</h1>
+  <section id="temporizador">
+    <ng-container *ngIf="goalIsComplete; else temporizador">
+      <h2>Chegou o grande dia!!!</h2>
+    </ng-container>
+    <ng-template #temporizador>
+      <div class="temporizador-container">
+        <!-- <label id="headline">Restam</label> -->
+        <div id="countdown">
+          <ul>
+            <li>
+              <span id="days">{{ days }}</span
+              >DIAS
+            </li>
+            <li>
+              <span id="hours">{{ hours }}</span
+              >HORAS
+            </li>
+            <li>
+              <span id="minutes">{{ minutes }}</span
+              >MINUTOS
+            </li>
+            <li>
+              <span id="seconds">{{ seconds }}</span
+              >SEGUNDOS
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
   </section>
   <section id="local">
     <h1>Local</h1>
