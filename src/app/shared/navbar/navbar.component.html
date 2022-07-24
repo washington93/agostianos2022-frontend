@@ -1,15 +1,20 @@
 <ng-container *ngIf="true; else desktop">
-  <div [ngClass]="menuEnabled ? 'activated' : 'disabled'" (click)="clickHandler($event)">
+  <div
+    [ngClass]="menuEnabled ? 'activated' : 'disabled'"
+    (click)="clickHandler($event)"
+  >
     <div class="icon">
       <fa-icon
         [icon]="menuEnabled ? closeIcon : menuIcon"
         (click)="menuHandler()"
       ></fa-icon>
     </div>
-    <div class="items" *ngIf="menuEnabled">
-      <span *ngFor="let item of menu" (click)="itemHandler(item)">
-        {{ item.name }}
-      </span>
+    <div class="itens-container">
+      <div class="items" *ngIf="menuEnabled">
+        <span *ngFor="let item of menu" (click)="itemHandler(item)">
+          {{ item.name }}
+        </span>
+      </div>
     </div>
   </div>
 </ng-container>
