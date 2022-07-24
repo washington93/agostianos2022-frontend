@@ -1,0 +1,22 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.btn-primary{
+  width: 100%;
+}
+
+#basic-addon1, #basic-addon2{
+  border-radius: 8px 0 0 8px;
+}

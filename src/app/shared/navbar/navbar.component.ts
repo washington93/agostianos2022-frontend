@@ -8,9 +8,9 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  host: {
-    '(window:resize)': 'onResize($event)',
-  },
+  // host: {
+  //   '(window:resize)': 'onResize($event)',
+  // },
 })
 export class NavbarComponent implements OnInit {
   menu: MenuItem[] = [];
