@@ -73,8 +73,8 @@ export class NavbarComponent implements OnInit {
       type: 'section',
     },
     {
-      name: 'Brindes',
-      path: 'brindes',
+      name: 'Recompensas',
+      path: 'recompensas',
       icon: 'fa-database',
       type: 'section',
     },
