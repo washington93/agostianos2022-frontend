@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   pop: string | boolean = '';
 
   loginForm = this.formBuilder.group({
-    usuario: [''],
-    senha: [''],
+    usuario: ['washington.ribeiro@paneas.com'],
+    senha: ['admin'],
   });
 
   lembreme: boolean = false;
@@ -45,14 +45,21 @@ export class LoginComponent implements OnInit {
   async login() {
     const { usuario, senha } = this.loginForm.value;
     try {
-      await this.usuariosService.login(usuario || '', senha || '');
+      const resp:any = await this.usuariosService.login(usuario || '', senha || '');
+
       if (this.lembreme) {
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('lembreme');
+        localStorage.removeItem('token');
         localStorage.setItem('usuario', usuario + '');
         localStorage.setItem('lembreme', 'true');
+        localStorage.setItem('token', resp.token);
       } else {
         localStorage.removeItem('usuario');
         localStorage.removeItem('lembreme');
+        sessionStorage.setItem('token', resp.token);
       }
+
       this.router.navigate(['/dashboard']);
     } catch (e:any) {
       this.pop = e?.error.message;
