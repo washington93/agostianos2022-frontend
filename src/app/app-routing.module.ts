@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'signup', loadChildren: () => import('./content/signup/signup.module').then(m => m.SignupModule), canActivate: [AppGuard] },
   { path: 'dashboard', loadChildren: () => import('./content/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard] },
   { path: 'admin', loadChildren: () => import('./content/admin/admin.module').then(m => m.AdminModule), canActivate: [AdminGuard]  },
+  { path: 'settings', loadChildren: () => import('./content/settings/settings.module').then(m => m.SettingsModule) },
 ];
 
 @NgModule({

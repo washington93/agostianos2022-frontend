@@ -2,7 +2,10 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+const helper = new JwtHelperService();
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +21,9 @@ export class NavbarComponent implements OnInit {
   constructor(public router: Router, private scroller: ViewportScroller) {}
 
   ngOnInit() {
-    this.router.url
+    const token =
+      localStorage.getItem('token') || sessionStorage.getItem('token');
+
     switch (this.router.url) {
       case '/':
         this.menu = this.home;
@@ -29,8 +34,49 @@ export class NavbarComponent implements OnInit {
       case '/signup':
         this.menu = this.signup;
         break;
+      case '/dashboard':
+        this.menu = this.dashboard;
+        if (token) {
+          const user = helper.decodeToken(token);
+          if (user?.admin) {
+            this.menu.push({
+              name: 'Area Administrativa',
+              path: '/admin',
+              icon: 'fa-database',
+              type: 'page',
+            });
+          }
+        }
+
+        break;
+      case '/settings':
+        this.menu = this.settings;
+        if (token) {
+          const user = helper.decodeToken(token);
+          if (user?.admin) {
+            this.menu.push({
+              name: 'Area Administrativa',
+              path: '/admin',
+              icon: 'fa-database',
+              type: 'page',
+            });
+          }
+        }
+        break;
+      case '/admin':
+        this.menu = this.admin;
+        break;
       default:
         console.log('Configure the route menu.');
+    }
+
+    if (token) {
+      this.menu.push({
+        name: 'Sair',
+        path: '',
+        icon: 'fa-database',
+        type: 'logout',
+      });
     }
   }
 
@@ -46,15 +92,20 @@ export class NavbarComponent implements OnInit {
       case 'section':
         this.scroller.scrollToAnchor(item.path);
         break;
+      case 'logout':
+        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
+        await this.router.navigateByUrl(item.path);
+        break;
       default:
         console.log('Unknown menu item type.');
         break;
     }
   }
 
-  clickHandler(event:MouseEvent){
+  clickHandler(event: MouseEvent) {
     const target = <HTMLElement>event?.target;
-    if(target?.className == 'activated'){
+    if (target?.className == 'activated') {
       this.menuEnabled = false;
     }
   }
@@ -117,6 +168,39 @@ export class NavbarComponent implements OnInit {
     {
       name: 'Login',
       path: '/login',
+      icon: 'fa-database',
+      type: 'page',
+    },
+  ];
+
+  dashboard: MenuItem[] = [
+    {
+      name: 'Configurações',
+      path: '/settings',
+      icon: 'fa-database',
+      type: 'page',
+    },
+  ];
+
+  admin: MenuItem[] = [
+    {
+      name: 'Configurações',
+      path: '/settings',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Dashboard',
+      path: '/dashboard',
+      icon: 'fa-database',
+      type: 'page',
+    },
+  ];
+
+  settings: MenuItem[] = [
+    {
+      name: 'Dashboard',
+      path: '/dashboard',
       icon: 'fa-database',
       type: 'page',
     },
