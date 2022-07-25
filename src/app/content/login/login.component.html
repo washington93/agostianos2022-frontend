@@ -4,18 +4,20 @@
     <h2>Agostianos 2022</h2>
     <img src="assets/imgs/mickey_mouse.png" width="150px" />
   </div>
-  <form>
+  <form [formGroup]="loginForm">
     <!-- Email input -->
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Login</span>
+        <span class="input-group-text" id="basic-addon1">E-mail</span>
       </div>
       <input
-        type="text"
+        type="email"
         class="form-control"
-        placeholder="Username"
-        aria-label="Username"
+        formControlName="usuario"
+        placeholder="email@dominio.com"
+        aria-label="email@dominio.com"
         aria-describedby="basic-addon1"
+        (click)="pop = ''"
       />
     </div>
 
@@ -24,14 +26,28 @@
         <span class="input-group-text" id="basic-addon1">Senha</span>
       </div>
       <input
-        type="text"
+        [type]="mostrarSenha ? 'text' : 'password'"
         class="form-control"
-        placeholder="Username"
-        aria-label="Username"
+        placeholder="Senha"
+        aria-label="Senha"
+        formControlName="senha"
         aria-describedby="basic-addon1"
+        (click)="pop = ''"
       />
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">
+          <fa-icon
+            id="mostrar-senha"
+            [icon]="mostrarSenha ? olhoCortado : olho"
+            (click)="mostrarSenha = !mostrarSenha"
+          ></fa-icon>
+        </span>
+      </div>
     </div>
-    <button class="btn-primary">Entrar</button>
+    <div class="alert" *ngIf="pop">
+      <strong>{{pop}}</strong>
+    </div>
+    <button class="btn-primary" (click)="login()">Entrar</button>
   </form>
   <br />
   <br />
@@ -44,9 +60,7 @@
           <input
             class="form-check-input"
             type="checkbox"
-            value=""
-            id="form2Example31"
-            checked
+            [(ngModel)]="lembreme"
           />
           <label class="form-check-label" for="form2Example31">
             Lembre-me
