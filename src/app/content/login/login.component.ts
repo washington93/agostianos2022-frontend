@@ -54,8 +54,8 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem('lembreme');
       }
       this.router.navigate(['/dashboard']);
-    } catch (error) {
-      this.pop = 'Usuário ou senha inválidos';
+    } catch (e:any) {
+      this.pop = e?.error.message;
     }
   }
 }

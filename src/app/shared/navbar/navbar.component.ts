@@ -8,9 +8,6 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  // host: {
-  //   '(window:resize)': 'onResize($event)',
-  // },
 })
 export class NavbarComponent implements OnInit {
   menu: MenuItem[] = [];
@@ -28,6 +25,9 @@ export class NavbarComponent implements OnInit {
         break;
       case '/login':
         this.menu = this.login;
+        break;
+      case '/signup':
+        this.menu = this.signup;
         break;
       default:
         console.log('Configure the route menu.');
@@ -79,7 +79,13 @@ export class NavbarComponent implements OnInit {
       type: 'section',
     },
     {
-      name: 'Entrar',
+      name: 'Cadastro',
+      path: '/signup',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Login',
       path: '/login',
       icon: 'fa-database',
       type: 'page',
@@ -90,6 +96,27 @@ export class NavbarComponent implements OnInit {
     {
       name: 'Inicio',
       path: '/',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Cadastro',
+      path: '/signup',
+      icon: 'fa-database',
+      type: 'page',
+    },
+  ];
+
+  signup: MenuItem[] = [
+    {
+      name: 'Inicio',
+      path: '/',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Login',
+      path: '/login',
       icon: 'fa-database',
       type: 'page',
     },

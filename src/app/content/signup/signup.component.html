@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<main class="container" style="min-height: 100vh">
+  <div class="banner">
+    <h2>Cadastro</h2>
+  </div>
+  <form [formGroup]="cadastroForm">
+    <!-- Email input -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Nome</span>
+      </div>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="nome"
+        placeholder="nome"
+        aria-label="nome"
+        aria-describedby="basic-addon1"
+        (click)="pop = ''"
+      />
+    </div>
+
+    <!-- Email input -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">E-mail</span>
+      </div>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="usuario"
+        placeholder="email@dominio.com"
+        aria-label="email@dominio.com"
+        aria-describedby="basic-addon1"
+        (click)="pop = ''"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Senha</span>
+      </div>
+      <input
+        [type]="mostrarSenha ? 'text' : 'password'"
+        class="form-control"
+        placeholder="Senha"
+        aria-label="Senha"
+        formControlName="senha"
+        aria-describedby="basic-addon1"
+        (click)="pop = ''"
+      />
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">
+          <fa-icon
+            id="mostrar-senha"
+            [icon]="mostrarSenha ? olhoCortado : olho"
+            (click)="mostrarSenha = !mostrarSenha"
+          ></fa-icon>
+        </span>
+      </div>
+    </div>
+    <div class="alert" *ngIf="pop">
+      <strong>{{ pop }}</strong>
+    </div>
+    <button class="btn-primary" (click)="cadastrar()">Cadastrar</button>
+  </form>
+  <br />
+  <br />
+</main>
+
+<div class="modal-all" *ngIf="sucesso">
+  <input class="checker" type="checkbox" />
+  <div class="modal modal-sm" style="display: flex">
+    <section>
+      <header>
+        <div class="box-returno-atencao">
+          <i class="icon-info"></i>
+          <b style="color: #000">Agora é só aguardar</b>
+        </div>
+      </header>
+      <article>
+        <p>
+          Um dos integrantes da diretoria ira aprovar o seu cadastro.
+          <br />
+          <br />
+          <b></b>
+        </p>
+        <div class="row row-va">
+          <button class="btn-master btn100" (click)="voltar()">Ok</button>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>

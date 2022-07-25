@@ -13,8 +13,18 @@ export class UsuariosService {
 
   login(usuario: string, senha: string) {
     return this.requestService.post(`${baseUrl}/autenticacao`, {
-      email:usuario,
+      email: usuario,
       senha,
     });
   }
+
+  cadastro(data: ICadastro) {
+    return this.requestService.post(`${baseUrl}/usuarios`, data);
+  }
+}
+
+interface ICadastro {
+  nome: string;
+  email: string;
+  senha: string;
 }

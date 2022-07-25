@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+#basic-addon1,
+#basic-addon2 {
+  border-radius: 8px 0 0 8px;
+}
+
+#basic-addon3 {
+  border-radius: 0 8px 8px 0;
+}
+
+#mostrar-senha{
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  opacity: 0.85;
+}
+
+#mostrar-senha:hover{
+  opacity: 1;
+}
