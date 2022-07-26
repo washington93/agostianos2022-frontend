@@ -1,0 +1,15 @@
+
+th,td{
+  text-align: center;
+}
+
+tbody tr td{
+  cursor: pointer;
+  display: inline-flexbox;
+  align-items: center;
+  justify-content: center;
+}
+
+tbody tr:hover{
+  background-color: rgba(0,0,0,0.05);
+}

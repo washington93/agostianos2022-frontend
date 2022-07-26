@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<main class="container" style="min-height: 100vh">
+<main>
   <div class="banner">
     <h2>Agostianos 2022</h2>
     <img src="assets/imgs/mickey_mouse.png" width="150px" />
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="alert" *ngIf="pop">
-      <strong>{{pop}}</strong>
+      <strong>{{ pop }}</strong>
     </div>
     <button class="btn-primary" (click)="login()">Entrar</button>
   </form>

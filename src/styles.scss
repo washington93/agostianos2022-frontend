@@ -1,5 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
-
 $cor1:#e1173f;
 
 .container {
@@ -10,10 +8,6 @@ $cor1:#e1173f;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.container section {
-  min-height: 100vh;
 }
 
 .btn-primary {
@@ -187,3 +181,6 @@ $cor1:#e1173f;
     border-radius: 5px;
   }
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

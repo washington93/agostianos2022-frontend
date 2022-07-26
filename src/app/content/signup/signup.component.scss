@@ -1,3 +1,9 @@
+main {
+  max-width: 300px;
+  background-color: rgba(0,0,0,0.15);
+  padding: 8px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -26,12 +32,12 @@ form {
   border-radius: 0 8px 8px 0;
 }
 
-#mostrar-senha{
+#mostrar-senha {
   cursor: pointer;
   transition: all 200ms ease-in-out;
   opacity: 0.85;
 }
 
-#mostrar-senha:hover{
+#mostrar-senha:hover {
   opacity: 1;
 }
