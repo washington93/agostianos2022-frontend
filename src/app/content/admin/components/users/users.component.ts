@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { AdminService } from 'src/services/admin/admin.service';
 
@@ -10,6 +10,8 @@ import { AdminService } from 'src/services/admin/admin.service';
 export class UsersComponent implements OnInit {
   usuarios: IUsuario[] = [];
   erroAoCarregarUsuarios: boolean = false;
+
+  @Output() escolherUsuario = new EventEmitter<IUsuario>();
 
   constructor(private adminService: AdminService) {}
 
@@ -25,6 +27,10 @@ export class UsersComponent implements OnInit {
     } catch (error) {
       this.erroAoCarregarUsuarios = true;
     }
+  }
+
+  selecionar(usuario?: IUsuario) {
+    this.escolherUsuario.emit(usuario);
   }
 }
 

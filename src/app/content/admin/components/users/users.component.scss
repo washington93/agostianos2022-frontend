@@ -1,15 +1,26 @@
-
-th,td{
+th,
+td {
   text-align: center;
 }
 
-tbody tr td{
+tbody tr td {
   cursor: pointer;
   display: inline-flexbox;
   align-items: center;
   justify-content: center;
 }
 
-tbody tr:hover{
-  background-color: rgba(0,0,0,0.05);
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+article button {
+  width: 150px;
 }

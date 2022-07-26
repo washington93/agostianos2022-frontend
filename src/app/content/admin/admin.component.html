@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 <main>
-  <app-users></app-users>
-  <!-- <h1>Painel Administrativo</h1> -->
-
+  <app-users (escolherUsuario)="selecionarUsuario($event)"></app-users>
+  <app-user-edit
+    (limparUsuario)="selecionarUsuario($event)"
+    [usuarioSelecionado]="usuarioSelecionado"
+  ></app-user-edit>
 </main>
-

@@ -7,7 +7,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let usuario of usuarios">
+      <tr *ngFor="let usuario of usuarios" (click)="selecionar(usuario)">
         <td>
           <div class="d-flex align-items-center">
             <img
@@ -17,13 +17,15 @@
               class="rounded-circle"
             />
             <div class="ms-3">
-              <p class="fw-bold mb-1">{{usuario?.nome}}</p>
-              <p class="text-muted mb-0">{{usuario?.email}}</p>
+              <p class="fw-bold mb-1">{{ usuario?.nome }}</p>
+              <p class="text-muted mb-0">{{ usuario?.email }}</p>
             </div>
           </div>
         </td>
         <td>
-          <p class="text-muted mb-1">{{usuario?.ativo ? 'Ativo' : 'Desativo'}}</p>
+          <p class="text-muted mb-1">
+            {{ usuario?.ativo ? "Ativo" : "Desativo" }}
+          </p>
           <p class="text-muted mb-0">Pago</p>
         </td>
       </tr>
