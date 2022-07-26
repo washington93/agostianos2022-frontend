@@ -1,0 +1,38 @@
+import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class tokenInterceptor implements HttpInterceptor {
+  constructor() {}
+
+  intercept(
+    request: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    const token =
+      localStorage.getItem('token') || sessionStorage.getItem('token');
+
+    if (request.url.includes('worldclockapi')) {
+      console.log(request.url);
+      return next.handle(request);
+    }
+
+    if (token) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } else {
+      return next.handle(request);
+    }
+
+    return next.handle(request);
+  }
+}

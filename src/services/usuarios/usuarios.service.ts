@@ -1,7 +1,7 @@
-import { RequestService } from './../requests/requests.service';
 import { Injectable } from '@angular/core';
 
 import { environment } from 'src/environments/environment';
+import { RequestService } from 'src/services/requests/requests.service';
 
 const baseUrl = environment.apiUrl;
 
