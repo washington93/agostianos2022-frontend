@@ -1,4 +1,4 @@
-$cor1:orange;
+$cor1: orange;
 
 .container {
   padding: 0;
@@ -182,7 +182,7 @@ $cor1:orange;
   }
 }
 
-.fechar-modal{
+.fechar-modal {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -195,5 +195,12 @@ $cor1:orange;
   }
 }
 
+// media
+@media (max-width: 768px) {
+  .modal-sm {
+    padding: 8px !important;
+  }
+}
+
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
