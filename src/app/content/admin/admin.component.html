@@ -1,8 +1,19 @@
 <app-navbar></app-navbar>
 <main>
-  <h1 (click)="collapse.toggle()">Usuários</h1>
+  <h2 (click)="collapsePontuacao.toggle()">
+    Pontuação
+    <fa-icon [icon]="expandirPontuacao ? faArrowRight : faArrowDown"></fa-icon>
+  </h2>
   <hr />
-  <div #collapse="ngbCollapse" [(ngbCollapse)]="expandirUsuarios">
+  <div #collapsePontuacao="ngbCollapse" [(ngbCollapse)]="expandirPontuacao">
+    Área em desenvolvimento
+  </div>
+  <h2 (click)="collapseUsuarios.toggle()">
+    Usuários
+    <fa-icon [icon]="expandirUsuarios ? faArrowRight : faArrowDown"></fa-icon>
+  </h2>
+  <hr />
+  <div #collapseUsuarios="ngbCollapse" [(ngbCollapse)]="expandirUsuarios">
     <app-users (escolherUsuario)="selecionarUsuario($event)"></app-users>
     <app-user-edit
       [mudancaUsuario]="mudancaNoUsuario"
@@ -10,6 +21,25 @@
       [usuarioSelecionado]="usuarioSelecionado"
     ></app-user-edit>
   </div>
+  <h2 (click)="collapseJogos.toggle()">
+    Jogos
+    <fa-icon [icon]="expandirJogos ? faArrowRight : faArrowDown"></fa-icon>
+  </h2>
+  <hr />
+  <div #collapseJogos="ngbCollapse" [(ngbCollapse)]="expandirJogos">
+    Área em desenvolvimento
+  </div>
+  <h2 (click)="collapseContribuicao.toggle()">
+    Contribuição
+    <fa-icon
+      [icon]="expandirContribuicao ? faArrowRight : faArrowDown"
+    ></fa-icon>
+  </h2>
+  <hr />
+  <div
+    #collapseContribuicao="ngbCollapse"
+    [(ngbCollapse)]="expandirContribuicao"
+  >
+    Área em desenvolvimento
+  </div>
 </main>
-
-

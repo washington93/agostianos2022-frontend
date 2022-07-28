@@ -10,12 +10,15 @@
       <tr *ngFor="let usuario of usuarios" (click)="selecionar(usuario)">
         <td>
           <div class="d-flex align-items-center">
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
+            <div class="avatar-container">
+              <img
+                src="assets/imgs/avatar.png"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+              />
+              <!-- <div class="avatar-indicador"></div> -->
+            </div>
             <div class="ms-3">
               <p class="fw-bold mb-1">{{ usuario?.nome }}</p>
               <p class="text-muted mb-0">{{ usuario?.email }}</p>
