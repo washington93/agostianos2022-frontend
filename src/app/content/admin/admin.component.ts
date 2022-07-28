@@ -8,6 +8,9 @@ import { Subject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AdminComponent implements OnInit {
+
+  expandirUsuarios = true;
+
   usuarioSelecionado?: any;
   mudancaNoUsuario: Subject<IUsuario | null | undefined> = new Subject();
 

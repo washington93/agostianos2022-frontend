@@ -1,9 +1,15 @@
 <app-navbar></app-navbar>
 <main>
-  <app-users (escolherUsuario)="selecionarUsuario($event)"></app-users>
-  <app-user-edit
-    [mudancaUsuario]="mudancaNoUsuario"
-    (limparUsuario)="selecionarUsuario($event)"
-    [usuarioSelecionado]="usuarioSelecionado"
-  ></app-user-edit>
+  <h1 (click)="collapse.toggle()">Usuários</h1>
+  <hr />
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="expandirUsuarios">
+    <app-users (escolherUsuario)="selecionarUsuario($event)"></app-users>
+    <app-user-edit
+      [mudancaUsuario]="mudancaNoUsuario"
+      (limparUsuario)="selecionarUsuario($event)"
+      [usuarioSelecionado]="usuarioSelecionado"
+    ></app-user-edit>
+  </div>
 </main>
+
+

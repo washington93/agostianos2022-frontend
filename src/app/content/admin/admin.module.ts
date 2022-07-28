@@ -9,6 +9,8 @@ import { NavbarModule } from 'src/app/shared/navbar/navbar.module';
 import { UsersComponent } from './components/users/users.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
+import { NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [AdminComponent, UsersComponent, UserEditComponent],
   imports: [
@@ -17,6 +19,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     NavbarModule,
     FormsModule,
     FontAwesomeModule,
-  ],
+    NgbCollapseModule
+  ]
 })
 export class AdminModule {}
