@@ -17,10 +17,12 @@ export class NavbarComponent implements OnInit {
   menuEnabled: boolean = false;
   menuIcon = faBars;
   closeIcon = faTimes;
+  ativo = '';
 
   constructor(public router: Router, private scroller: ViewportScroller) {}
 
   ngOnInit() {
+    this.ativo = sessionStorage.getItem('menu-ativo') || '';
     const token =
       localStorage.getItem('token') || sessionStorage.getItem('token');
 
@@ -85,6 +87,9 @@ export class NavbarComponent implements OnInit {
   }
 
   async itemHandler(item: MenuItem) {
+    this.menuEnabled = false;
+    this.ativo = item.path;
+    sessionStorage.setItem('menu-ativo', item.path);
     switch (item.type) {
       case 'page':
         await this.router.navigateByUrl(item.path);
@@ -112,26 +117,8 @@ export class NavbarComponent implements OnInit {
 
   home: MenuItem[] = [
     {
-      name: 'Sobre',
-      path: 'temporizador',
-      icon: 'fa-database',
-      type: 'section',
-    },
-    {
-      name: 'Local',
-      path: 'local',
-      icon: 'fa-database',
-      type: 'section',
-    },
-    {
-      name: 'Recompensas',
-      path: 'recompensas',
-      icon: 'fa-database',
-      type: 'section',
-    },
-    {
-      name: 'Cadastro',
-      path: '/signup',
+      name: 'Inicio',
+      path: '/',
       icon: 'fa-database',
       type: 'page',
     },
@@ -141,12 +128,24 @@ export class NavbarComponent implements OnInit {
       icon: 'fa-database',
       type: 'page',
     },
+    {
+      name: 'Cadastro',
+      path: '/signup',
+      icon: 'fa-database',
+      type: 'page',
+    },
   ];
 
   login: MenuItem[] = [
     {
       name: 'Inicio',
       path: '/',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Login',
+      path: '/login',
       icon: 'fa-database',
       type: 'page',
     },
@@ -165,9 +164,16 @@ export class NavbarComponent implements OnInit {
       icon: 'fa-database',
       type: 'page',
     },
+
     {
       name: 'Login',
       path: '/login',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Cadastro',
+      path: '/signup',
       icon: 'fa-database',
       type: 'page',
     },
@@ -177,6 +183,12 @@ export class NavbarComponent implements OnInit {
     {
       name: 'Configurações',
       path: '/settings',
+      icon: 'fa-database',
+      type: 'page',
+    },
+    {
+      name: 'Dashboard',
+      path: '/dashboard',
       icon: 'fa-database',
       type: 'page',
     },
@@ -195,9 +207,21 @@ export class NavbarComponent implements OnInit {
       icon: 'fa-database',
       type: 'page',
     },
+    {
+      name: 'Area Administrativa',
+      path: '/admin',
+      icon: 'fa-database',
+      type: 'page',
+    },
   ];
 
   settings: MenuItem[] = [
+    {
+      name: 'Configurações',
+      path: '/settings',
+      icon: 'fa-database',
+      type: 'page',
+    },
     {
       name: 'Dashboard',
       path: '/dashboard',

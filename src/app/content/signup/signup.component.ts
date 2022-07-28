@@ -19,9 +19,9 @@ export class SignupComponent implements OnInit {
   pop: string | boolean = '';
 
   cadastroForm = this.formBuilder.group({
-    nome: ['Teste'],
-    usuario: ['washington.tads@gmail.com'],
-    senha: ['1234'],
+    nome: [''],
+    usuario: [''],
+    senha: [''],
   });
 
   constructor(

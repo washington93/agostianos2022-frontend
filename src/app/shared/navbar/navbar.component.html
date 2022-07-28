@@ -12,7 +12,7 @@
     <div class="itens-container">
       <div class="items" *ngIf="menuEnabled">
         <span *ngFor="let item of menu" (click)="itemHandler(item)">
-          {{ item.name }}
+          {{ ativo == item.path ? "> " : "" }}{{ item.name }}
         </span>
       </div>
     </div>

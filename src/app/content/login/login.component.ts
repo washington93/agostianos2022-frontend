@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   pop: string | boolean = '';
 
   loginForm = this.formBuilder.group({
-    usuario: ['washington.ribeiro@paneas.com'],
-    senha: ['admin'],
+    usuario: [''],
+    senha: [''],
   });
 
   lembreme: boolean = false;
