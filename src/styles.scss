@@ -1,4 +1,4 @@
-$cor1:#e1173f;
+$cor1:orange;
 
 .container {
   padding: 0;
@@ -179,6 +179,19 @@ $cor1:#e1173f;
     width: 5px;
     height: 5px;
     border-radius: 5px;
+  }
+}
+
+.fechar-modal{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: normal;
+  &:hover {
+    background-color: #fff;
   }
 }
 

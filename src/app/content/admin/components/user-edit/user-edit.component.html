@@ -4,7 +4,11 @@
   <div class="modal modal-sm" style="display: flex">
     <section>
       <header>
-        <label for="pin"><i class="icon-times"></i></label>
+        <fa-icon
+          [icon]="icFechar"
+          class="fechar-modal"
+          (click)="limpar()"
+        ></fa-icon>
       </header>
       <article>
         <img
@@ -14,20 +18,20 @@
           class="rounded-circle"
         />
         <br />
-        <strong>{{usuarioSelecionado?.nome}}</strong>
+        <strong>{{ usuarioSelecionado?.nome }}</strong>
         <div class="checkbox-group">
           <div>
-            <input type="checkbox" [checked]="usuarioSelecionado?.ativo" />
+            <input type="checkbox" [(ngModel)]="usuarioSelecionado.ativo" />
             <label for="checkbox1">Ativo</label>
           </div>
           <div>
-            <input type="checkbox" [checked]="usuarioSelecionado?.admin" />
+            <input type="checkbox" [(ngModel)]="usuarioSelecionado.admin" />
             <label for="checkbox1">Admin</label>
           </div>
         </div>
 
         <br />
-        <button class="btn-primary" (click)="limpar()">Salvar</button>
+        <button class="btn-primary" (click)="salvar()">Salvar</button>
       </article>
     </section>
   </div>
