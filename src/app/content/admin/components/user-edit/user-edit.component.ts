@@ -1,16 +1,9 @@
-import {
-  Component,
-  EventEmitter,
-  Inject,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Subject } from 'rxjs';
 
 import { AdminService } from 'src/services/admin/admin.service';
-import { AdminComponent } from 'src/app/content/admin/admin.component';
 
 @Component({
   selector: 'app-user-edit',
@@ -18,16 +11,28 @@ import { AdminComponent } from 'src/app/content/admin/admin.component';
   styleUrls: ['./user-edit.component.scss'],
 })
 export class UserEditComponent implements OnInit {
+  value: boolean = false;
+
+  @Input() usuarioSelecionado?: IUsuario;
+  @Output() limparUsuario = new EventEmitter<null>();
+  @Input() mudancaUsuario: Subject<IUsuario | null | undefined> = new Subject<
+    IUsuario | null | undefined
+  >();
+
   icFechar = faTimes;
   ativar: boolean = false;
   admin: boolean = false;
 
-  @Input() usuarioSelecionado?: IUsuario;
-  @Output() limparUsuario = new EventEmitter<null>();
-
   constructor(private adminService: AdminService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.mudancaUsuario.subscribe((usuario) => {
+      if(usuario){
+        this.ativar = usuario.ativo;
+        this.admin = usuario.admin;
+      }
+    });
+  }
 
   limpar() {
     this.limparUsuario.emit(null);
@@ -35,10 +40,14 @@ export class UserEditComponent implements OnInit {
 
   salvar() {
     if (this.usuarioSelecionado) {
+      this.usuarioSelecionado.ativo = this.ativar;
+      this.usuarioSelecionado.admin = this.admin;
+
       this.adminService.ativarDesativarUsuarios(
         this.usuarioSelecionado.id,
         this.usuarioSelecionado.ativo
       );
+
       this.adminService.modoAdminUsuario(
         this.usuarioSelecionado.id,
         this.usuarioSelecionado.admin

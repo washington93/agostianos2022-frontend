@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -8,6 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
   usuarioSelecionado?: any;
+  mudancaNoUsuario: Subject<IUsuario | null | undefined> = new Subject();
 
   constructor() {}
 
@@ -15,6 +17,7 @@ export class AdminComponent implements OnInit {
 
   selecionarUsuario(usuario?: IUsuario | null) {
     this.usuarioSelecionado = usuario;
+    this.mudancaNoUsuario.next(usuario);
   }
 
 }
