@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://localhost:3333',
-  apiUrl: 'http://15.228.223.202:3333',
+  apiUrl: 'https://ec2-18-231-184-131.sa-east-1.compute.amazonaws.com:3333',
 };
 
 /*
