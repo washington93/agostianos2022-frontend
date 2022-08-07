@@ -1,0 +1,19 @@
+<div class="footer-menu">
+  <div class="footer-menu-content">
+    <div [ngClass]="{ ativo: opcaoSelecionada_ == 'usuarios' }" (click)="selecionarItem('usuarios')">
+      <fa-icon [icon]="faUsers"></fa-icon>
+    </div>
+    <div [ngClass]="{ ativo: opcaoSelecionada_ == 'contribuicao' }" (click)="selecionarItem('contribuicao')">
+      <fa-icon [icon]="faDollar"></fa-icon>
+    </div>
+    <div [ngClass]="{ ativo: opcaoSelecionada_ == 'jogos' }" (click)="selecionarItem('jogos')">
+      <fa-icon [icon]="faDice"></fa-icon>
+    </div>
+    <div [ngClass]="{ ativo: opcaoSelecionada_ == 'grupos' }" (click)="selecionarItem('grupos')">
+      <fa-icon [icon]="faShield"></fa-icon>
+    </div>
+    <div [ngClass]="{ ativo: opcaoSelecionada_ == 'pontuacao' }" (click)="selecionarItem('pontuacao')">
+      <fa-icon [icon]="faStar"></fa-icon>
+    </div>
+  </div>
+</div>

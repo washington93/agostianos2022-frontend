@@ -1,8 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Subject } from 'rxjs';
-
-import { faChevronCircleDown,faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -10,39 +6,13 @@ import { faChevronCircleDown,faChevronCircleRight } from '@fortawesome/free-soli
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AdminComponent implements OnInit {
-
-  expandirPontuacao = true;
-  expandirUsuarios = true;
-  expandirJogos = true;
-  expandirContribuicao = true;
-
-  usuarioSelecionado?: any;
-  mudancaNoUsuario: Subject<IUsuario | null | undefined> = new Subject();
-
-  faArrowDown = faChevronCircleDown;
-  faArrowRight = faChevronCircleRight;
+  opcaoSelecionada?: string = 'jogos';
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  selecionarUsuario(usuario?: IUsuario | null) {
-    this.usuarioSelecionado = usuario;
-    this.mudancaNoUsuario.next(usuario);
+  selecionarItemDoMenu(item: any) {
+    this.opcaoSelecionada = item;
   }
-
-}
-
-interface IUsuario {
-  admin: boolean;
-  avatar: string;
-  email: string;
-  id: number;
-  ativo: boolean;
-  moldura: null;
-  nome: string;
-  pontuacao: null;
-  primeiroNome: string;
-  sobre: string;
-  telefone: string;
 }

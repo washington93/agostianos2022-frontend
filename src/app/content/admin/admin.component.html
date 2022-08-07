@@ -1,45 +1,10 @@
 <app-navbar></app-navbar>
-<main>
-  <h2 (click)="collapsePontuacao.toggle()">
-    Pontuação
-    <fa-icon [icon]="expandirPontuacao ? faArrowRight : faArrowDown"></fa-icon>
-  </h2>
-  <hr />
-  <div #collapsePontuacao="ngbCollapse" [(ngbCollapse)]="expandirPontuacao">
-    Área em desenvolvimento
-  </div>
-  <h2 (click)="collapseUsuarios.toggle()">
-    Usuários
-    <fa-icon [icon]="expandirUsuarios ? faArrowRight : faArrowDown"></fa-icon>
-  </h2>
-  <hr />
-  <div #collapseUsuarios="ngbCollapse" [(ngbCollapse)]="expandirUsuarios">
-    <app-users (escolherUsuario)="selecionarUsuario($event)"></app-users>
-    <app-user-edit
-      [mudancaUsuario]="mudancaNoUsuario"
-      (limparUsuario)="selecionarUsuario($event)"
-      [usuarioSelecionado]="usuarioSelecionado"
-    ></app-user-edit>
-  </div>
-  <h2 (click)="collapseJogos.toggle()">
-    Jogos
-    <fa-icon [icon]="expandirJogos ? faArrowRight : faArrowDown"></fa-icon>
-  </h2>
-  <hr />
-  <div #collapseJogos="ngbCollapse" [(ngbCollapse)]="expandirJogos">
-    Área em desenvolvimento
-  </div>
-  <h2 (click)="collapseContribuicao.toggle()">
-    Contribuição
-    <fa-icon
-      [icon]="expandirContribuicao ? faArrowRight : faArrowDown"
-    ></fa-icon>
-  </h2>
-  <hr />
-  <div
-    #collapseContribuicao="ngbCollapse"
-    [(ngbCollapse)]="expandirContribuicao"
-  >
-    Área em desenvolvimento
-  </div>
-</main>
+<div class="content">
+  <container-element [ngSwitch]="opcaoSelecionada">
+    <app-usuarios *ngSwitchCase="'usuarios'"> </app-usuarios>
+  </container-element>
+</div>
+<app-footer-menu
+  [opcaoSelecionada_]="opcaoSelecionada"
+  (selecionarItemDoMenu)="selecionarItemDoMenu($event)"
+></app-footer-menu>

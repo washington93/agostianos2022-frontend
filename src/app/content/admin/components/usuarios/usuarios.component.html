@@ -1,0 +1,6 @@
+<app-users (escolherUsuario)="selecionarUsuario($event)"></app-users>
+<app-user-edit
+  [mudancaUsuario]="mudancaNoUsuario"
+  (limparUsuario)="selecionarUsuario($event)"
+  [usuarioSelecionado]="usuarioSelecionado"
+></app-user-edit>
