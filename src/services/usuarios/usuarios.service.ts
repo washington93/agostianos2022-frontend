@@ -21,6 +21,10 @@ export class UsuariosService {
   cadastro(data: ICadastro) {
     return this.requestService.post(`${baseUrl}/usuarios`, data);
   }
+
+  dados() {
+    return this.requestService.get(`${baseUrl}/usuarios/dados`);
+  }
 }
 
 interface ICadastro {
