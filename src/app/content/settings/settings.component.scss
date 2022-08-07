@@ -1,16 +1,16 @@
-a{
+a {
   cursor: pointer;
 }
 
-.nav-link{
+.nav-link {
   background-color: #fff;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   background-color: #ededed;
 }
 
-.nav-link.active{
+.nav-link.active {
   background-color: #0d6efd;
 }
 
@@ -54,4 +54,11 @@ a{
 
 .border-right {
   border-right: 1px solid #dee2e6 !important;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
 }

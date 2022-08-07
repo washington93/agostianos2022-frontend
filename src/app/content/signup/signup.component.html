@@ -10,12 +10,13 @@
         <span class="input-group-text" id="basic-addon1">Nome</span>
       </div>
       <input
-        type="email"
+        type="name"
         class="form-control"
         formControlName="nome"
         placeholder="nome"
         aria-label="nome"
         aria-describedby="basic-addon1"
+        autocomplete="name"
         (click)="pop = ''"
       />
     </div>
@@ -32,6 +33,7 @@
         placeholder="email@dominio.com"
         aria-label="email@dominio.com"
         aria-describedby="basic-addon1"
+        autocomplete="email"
         (click)="pop = ''"
       />
     </div>

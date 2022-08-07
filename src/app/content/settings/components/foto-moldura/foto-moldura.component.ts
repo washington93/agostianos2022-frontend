@@ -13,4 +13,8 @@ export class FotoMolduraComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  atualizar(){
+    console.log("Atualizar foto e moldura");
+  }
 }

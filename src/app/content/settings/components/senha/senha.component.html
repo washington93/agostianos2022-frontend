@@ -1,16 +1,4 @@
-<div class="row">
-  <!-- <div class="col-md-12">
-    <div class="form-group">
-      <label>Senha</label>
-      <input type="password" class="form-control" />
-    </div>
-  </div>
-  <div class="col-md-12">
-    <div class="form-group">
-      <label>Confirmar senha</label>
-      <input type="password" class="form-control" />
-    </div>
-  </div> -->
+<form class="row">
   <div class="input-group mb-3">
     <input
       [type]="mostrarSenha ? 'text' : 'password'"
@@ -18,11 +6,11 @@
       placeholder="******"
       aria-label="Senha"
       aria-describedby="basic-addon1"
+      autocomplete="new-password"
     />
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon3">
         <fa-icon
-          id="mostrar-senha"
           [icon]="mostrarSenha ? olhoCortado : olho"
           (click)="mostrarSenha = !mostrarSenha"
         ></fa-icon>
@@ -36,19 +24,15 @@
       placeholder="******"
       aria-label="Senha"
       aria-describedby="basic-addon1"
+      autocomplete="current-password"
     />
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon3">
         <fa-icon
-          id="mostrar-resenha"
           [icon]="mostrarReSenha ? olhoCortado : olho"
-          (click)="mostrarReSenha = !mostrarSenha"
+          (click)="mostrarReSenha = !mostrarReSenha"
         ></fa-icon>
       </span>
     </div>
   </div>
-</div>
-<div>
-  <button class="btn btn-primary">Update</button>
-  <button class="btn btn-light">Cancel</button>
-</div>
+</form>

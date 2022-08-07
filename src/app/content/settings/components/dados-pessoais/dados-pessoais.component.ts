@@ -16,4 +16,8 @@ export class DadosPessoaisComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  atualizar() {
+    console.log("Atualizar dados pessoais");
+  }
 }
