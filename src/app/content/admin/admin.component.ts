@@ -6,7 +6,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AdminComponent implements OnInit {
-  opcaoSelecionada?: string = 'jogos';
+  opcaoSelecionada?: string = OpcaoMenu.usuarios;
 
   constructor() {}
 
@@ -15,4 +15,12 @@ export class AdminComponent implements OnInit {
   selecionarItemDoMenu(item: any) {
     this.opcaoSelecionada = item;
   }
+}
+
+enum OpcaoMenu {
+  usuarios = 'usuarios',
+  jogos = 'jogos',
+  pontuacao = 'pontuacao',
+  grupos = 'grupos',
+  contribuicao = 'contribuicao'
 }

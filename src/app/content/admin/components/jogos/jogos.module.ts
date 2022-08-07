@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { JogosComponent } from './jogos.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [JogosComponent]
+  imports: [CommonModule],
+  declarations: [JogosComponent],
+  exports: [JogosComponent],
 })
-export class JogosModule { }
+export class JogosModule {}

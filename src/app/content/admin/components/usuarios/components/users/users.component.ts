@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
+import { faCrown, faParking, faCircle } from '@fortawesome/free-solid-svg-icons';
+
 import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
@@ -8,10 +10,14 @@ import { AdminService } from 'src/services/admin/admin.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
+  @Output() escolherUsuario = new EventEmitter<IUsuario>();
+
   usuarios: IUsuario[] = [];
   erroAoCarregarUsuarios: boolean = false;
 
-  @Output() escolherUsuario = new EventEmitter<IUsuario>();
+  faCrown = faCrown;
+  faParking = faParking;
+  faCircle = faCircle;
 
   constructor(private adminService: AdminService) {}
 

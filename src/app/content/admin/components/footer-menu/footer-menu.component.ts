@@ -5,7 +5,7 @@ import {
   faDollar,
   faDice,
   faShield,
-  faStar
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -14,7 +14,6 @@ import {
   styleUrls: ['./footer-menu.component.scss'],
 })
 export class FooterMenuComponent implements OnInit {
-
   @Input() opcaoSelecionada_: any;
   @Output() selecionarItemDoMenu = new EventEmitter<string>();
 

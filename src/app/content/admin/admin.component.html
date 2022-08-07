@@ -1,7 +1,11 @@
 <app-navbar></app-navbar>
 <div class="content">
-  <container-element [ngSwitch]="opcaoSelecionada">
+  <container-element [ngSwitch]="opcaoSelecionada" style="min-width: 100%;">
     <app-usuarios *ngSwitchCase="'usuarios'"> </app-usuarios>
+    <app-contribuicao *ngSwitchCase="'contribuicao'"> </app-contribuicao>
+    <app-jogos *ngSwitchCase="'jogos'"> </app-jogos>
+    <app-grupos *ngSwitchCase="'grupos'"> </app-grupos>
+    <app-pontuacao *ngSwitchCase="'pontuacao'"> </app-pontuacao>
   </container-element>
 </div>
 <app-footer-menu

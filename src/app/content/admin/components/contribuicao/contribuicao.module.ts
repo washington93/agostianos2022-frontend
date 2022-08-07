@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ContribuicaoComponent } from './contribuicao.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [ContribuicaoComponent]
+  imports: [CommonModule],
+  declarations: [ContribuicaoComponent],
+  exports: [ContribuicaoComponent],
 })
-export class ContribuicaoModule { }
+export class ContribuicaoModule {}
