@@ -6,7 +6,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AdminComponent implements OnInit {
-  opcaoSelecionada?: string = OpcaoMenu.usuarios;
+  opcaoSelecionada?: string = OpcaoMenu.contribuicao;
 
   constructor() {}
 

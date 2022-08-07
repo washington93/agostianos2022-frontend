@@ -18,7 +18,11 @@
                 class="rounded-circle"
               />
               <!-- <div class="avatar-indicador"></div> -->
-              <fa-icon [icon]="faCrown" class="indicador-1"></fa-icon>
+              <fa-icon
+                [icon]="faCrown"
+                class="indicador-1"
+                *ngIf="usuario?.admin"
+              ></fa-icon>
               <fa-icon
                 [icon]="faCircle"
                 [ngClass]="usuario?.ativo ? 'indicador-2 ativo' : 'indicador-2'"

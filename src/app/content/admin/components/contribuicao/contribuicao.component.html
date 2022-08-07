@@ -1,3 +1,110 @@
-<p>
-  contribuicao works!
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-sm-9">Nome</th>
+      <th class="col-sm-3">Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let item of contribuintes"
+      (click)="modalContribuicoesUsuario = true"
+    >
+      <td>{{ item.nome }}</td>
+      <td>{{ item.contribuicao }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="adicionar" (click)="modalNovaContribuicao = true">
+  <fa-icon [icon]="faPlusCircle"></fa-icon>
+</div>
+
+<div class="modal-all" *ngIf="modalContribuicoesUsuario">
+  <input class="checker" type="checkbox" />
+  <div class="modal modal-sm" style="display: flex">
+    <section>
+      <article>
+        <h2>Everton de Luna</h2>
+        <table
+          class="table"
+          style="
+            max-height: 150px;
+            overflow-y: scroll;
+            max-width: 100%;
+            overflow-x: scroll;
+          "
+        >
+          <thead>
+            <tr>
+              <th scope="col">Responsável</th>
+              <th scope="col">Data</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Junior</th>
+              <td>27/07/2022</td>
+              <td>R$ 50,00</td>
+            </tr>
+            <tr>
+              <th>Junior</th>
+              <td>04/08/2022</td>
+              <td>R$ 30,00</td>
+            </tr>
+
+            <tr>
+              <th></th>
+              <td></td>
+              <td><strong>R$ 80,00</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row row-va">
+          <button
+            class="btn-master btn100"
+            (click)="modalContribuicoesUsuario = false"
+          >
+            Ok
+          </button>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+
+<div class="modal-all" *ngIf="modalNovaContribuicao">
+  <input class="checker" type="checkbox" />
+  <div class="modal modal-sm" style="display: flex">
+    <section>
+      <article>
+        <h2>Everton de Luna</h2>
+        <br />
+        Informe o valor da contribuição:
+        <br />
+        <input
+          type="number"
+          [(ngModel)]="valor"
+          inputmode="numeric"
+          class="input-valor"
+        />
+        <br />
+        <br />
+        <div class="modal-btns">
+          <div class="col-sm-6">
+            <button
+              class="btn-master btn100"
+              (click)="modalNovaContribuicao = false"
+            >
+              Cancelar
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <button class="btn-master btn100">Registrar</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>

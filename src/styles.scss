@@ -116,7 +116,7 @@ main {
       }
       article {
         background-color: none;
-        padding: 10px 60px 60px 60px;
+        padding: 16px;
       }
       footer {
         background-color: #ededed;
@@ -163,7 +163,6 @@ main {
 
 .modal-all .modal section {
   article {
-    max-height: 450px;
     overflow-y: scroll;
     margin-bottom: 10px;
   }
