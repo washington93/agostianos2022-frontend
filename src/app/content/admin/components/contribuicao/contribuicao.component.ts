@@ -17,6 +17,7 @@ export class ContribuicaoComponent implements OnInit {
 
   valor: number = 50;
   contribuintes: any = [];
+  contribuicoesParaDeletar: any = [];
   modalContribuicoesUsuario: boolean = false;
   modalNovaContribuicao: boolean = false;
 
@@ -29,6 +30,7 @@ export class ContribuicaoComponent implements OnInit {
   ngOnInit() {}
 
   async init() {
+    this.contribuintes = [];
     this.contribuintes = await this.adminService.getUsuarios();
 
     this.contribuintes.forEach((contribuinte: any) => {
@@ -40,6 +42,7 @@ export class ContribuicaoComponent implements OnInit {
     });
     this.modalContribuicoesUsuario = false;
     this.modalNovaContribuicao = false;
+    this.contribuicoesParaDeletar = [];
   }
 
   async registrar() {
@@ -47,6 +50,24 @@ export class ContribuicaoComponent implements OnInit {
       this.itemSelecionado?.id,
       this.valor
     );
+    this.init();
+  }
+
+  editarContribuicoes() {
+    this.contribuicoesParaDeletar = [];
+    this.modalContribuicoesUsuario = true;
+  }
+
+  deletar(item: any) {
+    item.deletar = item.deletar ? false : true;
+    if (item.deletar) {
+      this.contribuicoesParaDeletar.push(item);
+    }
+  }
+
+  async deletarContribuicoes() {
+    await this.adminService.deletarContribuicoes(this.contribuicoesParaDeletar);
+    await new Promise((resolve) => setTimeout(resolve, 200));
     this.init();
   }
 }

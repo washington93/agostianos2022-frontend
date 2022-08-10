@@ -44,4 +44,10 @@ export class AdminService {
       usuarioId: usuario_id,
     });
   }
+
+  deletarContribuicoes(lista: any[]) {
+    return this.requestService.post(`${baseUrl}/contribuicoes/deletar`, {
+      contribuicoes: lista,
+    });
+  }
 }

@@ -21,7 +21,7 @@
   <fa-icon [icon]="faPlusCircle"></fa-icon>
 </div>
 
-<div class="editar" (click)="modalContribuicoesUsuario = true">
+<div class="editar" (click)="editarContribuicoes()">
   <fa-icon [icon]="faClipboardList"></fa-icon>
 </div>
 
@@ -48,20 +48,36 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let c of itemSelecionado?.contribuicoes">
+            <tr
+              *ngFor="let c of itemSelecionado?.contribuicoes"
+              (click)="deletar(c)"
+              [ngClass]="{ deletar: c.deletar }"
+            >
               <th>{{ c?.responsavelId | labelResponsavel: contribuintes }}</th>
               <td>{{ c?.createdAt | date: "dd/MM/yyyy" }}</td>
               <td>{{ c?.valor }}</td>
             </tr>
           </tbody>
         </table>
-        <div class="row row-va">
-          <button
-            class="btn-master btn100"
-            (click)="modalContribuicoesUsuario = false"
-          >
-            Ok
-          </button>
+
+        <div class="modal-btns">
+          <div class="col-sm-6">
+            <button
+              class="btn-master btn100"
+              [disabled]="contribuicoesParaDeletar?.length === 0"
+              (click)="deletarContribuicoes()"
+            >
+              deletar
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <button
+              class="btn-master btn100"
+              (click)="modalContribuicoesUsuario = false"
+            >
+              cancelar
+            </button>
+          </div>
         </div>
       </article>
     </section>
@@ -95,7 +111,9 @@
             </button>
           </div>
           <div class="col-sm-6">
-            <button class="btn-master btn100" (click)="registrar()">Registrar</button>
+            <button class="btn-master btn100" (click)="registrar()">
+              Registrar
+            </button>
           </div>
         </div>
       </article>
