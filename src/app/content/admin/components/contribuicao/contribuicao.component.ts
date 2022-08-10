@@ -38,5 +38,15 @@ export class ContribuicaoComponent implements OnInit {
         );
       });
     });
+    this.modalContribuicoesUsuario = false;
+    this.modalNovaContribuicao = false;
+  }
+
+  async registrar() {
+    await this.adminService.registrarContribuicao(
+      this.itemSelecionado?.id,
+      this.valor
+    );
+    this.init();
   }
 }
