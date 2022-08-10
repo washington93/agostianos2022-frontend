@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ContribuicaoComponent } from './contribuicao.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LabelResponsavelPipe } from './label-responsavel.pipe';
 
 @NgModule({
   imports: [CommonModule, FontAwesomeModule, FormsModule, NgbModule],
-  declarations: [ContribuicaoComponent],
+  declarations: [ContribuicaoComponent, LabelResponsavelPipe],
   exports: [ContribuicaoComponent],
   bootstrap: [],
 })

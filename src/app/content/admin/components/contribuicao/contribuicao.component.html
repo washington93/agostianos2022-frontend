@@ -1,17 +1,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th class="col-sm-9">Nome</th>
-      <th class="col-sm-3">Valor</th>
+      <th class="col-8">Nome</th>
+      <th class="col-4">Valor</th>
     </tr>
   </thead>
   <tbody>
     <tr
       *ngFor="let item of contribuintes"
-      (click)="modalContribuicoesUsuario = true"
+      (click)="itemSelecionado = item"
+      [ngClass]="{ 'linha-selecionada': itemSelecionado?.id === item.id }"
     >
       <td>{{ item.nome }}</td>
-      <td>{{ item.contribuicao }}</td>
+      <td>{{ item.totalPago }}</td>
     </tr>
   </tbody>
 </table>
@@ -20,12 +21,16 @@
   <fa-icon [icon]="faPlusCircle"></fa-icon>
 </div>
 
+<div class="editar" (click)="modalContribuicoesUsuario = true">
+  <fa-icon [icon]="faClipboardList"></fa-icon>
+</div>
+
 <div class="modal-all" *ngIf="modalContribuicoesUsuario">
   <input class="checker" type="checkbox" />
   <div class="modal modal-sm" style="display: flex">
     <section>
       <article>
-        <h2>Everton de Luna</h2>
+        <h2>{{ itemSelecionado?.nome }}</h2>
         <table
           class="table"
           style="
@@ -43,21 +48,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>Junior</th>
-              <td>27/07/2022</td>
-              <td>R$ 50,00</td>
-            </tr>
-            <tr>
-              <th>Junior</th>
-              <td>04/08/2022</td>
-              <td>R$ 30,00</td>
-            </tr>
-
-            <tr>
-              <th></th>
-              <td></td>
-              <td><strong>R$ 80,00</strong></td>
+            <tr *ngFor="let c of itemSelecionado?.contribuicoes">
+              <th>{{ c?.responsavelId | labelResponsavel: contribuintes }}</th>
+              <td>{{ c?.createdAt | date: "dd/MM/yyyy" }}</td>
+              <td>{{ c?.valor }}</td>
             </tr>
           </tbody>
         </table>
@@ -79,7 +73,7 @@
   <div class="modal modal-sm" style="display: flex">
     <section>
       <article>
-        <h2>Everton de Luna</h2>
+        <h2>{{ itemSelecionado?.nome }}</h2>
         <br />
         Informe o valor da contribuição:
         <br />

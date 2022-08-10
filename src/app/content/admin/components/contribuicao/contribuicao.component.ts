@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  faPlusCircle,
+  faCommentDollar,
+} from '@fortawesome/free-solid-svg-icons';
 
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
   selector: 'app-contribuicao',
@@ -8,37 +12,31 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./contribuicao.component.scss'],
 })
 export class ContribuicaoComponent implements OnInit {
+  faClipboardList = faCommentDollar;
   faPlusCircle = faPlusCircle;
 
   valor: number = 50;
-
+  contribuintes: any = [];
   modalContribuicoesUsuario: boolean = false;
   modalNovaContribuicao: boolean = false;
 
-  constructor() {}
+  itemSelecionado?: any = null;
+
+  constructor(private adminService: AdminService) {
+    this.init();
+  }
 
   ngOnInit() {}
 
-  contribuintes: any[] = [
-    {
-      nome: 'João',
-      contribuicao: 'R$ 50,00',
-    },
-    {
-      nome: 'Maria',
-      contribuicao: 'R$ 100,00',
-    },
-    {
-      nome: 'Pedro',
-      contribuicao: 'R$ 150,00',
-    },
-    {
-      nome: 'José',
-      contribuicao: 'R$ 200,00',
-    },
-    {
-      nome: '',
-      contribuicao: 'R$ 500,00',
-    },
-  ];
+  async init() {
+    this.contribuintes = await this.adminService.getUsuarios();
+
+    this.contribuintes.forEach((contribuinte: any) => {
+      contribuinte?.contribuicoes.forEach((contribuicao: any) => {
+        contribuicao.responsavel = this.contribuintes.find(
+          (usuario: any) => usuario.id === contribuicao.responsavel
+        );
+      });
+    });
+  }
 }

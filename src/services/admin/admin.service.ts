@@ -28,4 +28,20 @@ export class AdminService {
       admin,
     });
   }
+
+  listarContribuicoes() {
+    return this.requestService.get(`${baseUrl}/contribuicoes`);
+  }
+
+  listarContribuicoesPorUsuario(usuario_id: string | number) {
+    return this.requestService.get(`${baseUrl}/contribuicoes/${usuario_id}`);
+  }
+
+  registrarContribuicao(usuario_id: string | number, valor: number) {
+    return this.requestService.post(`${baseUrl}/contribuicoes/registrar`, {
+      valor: valor,
+      formaPagamento: '',
+      usuarioId: usuario_id,
+    });
+  }
 }
