@@ -1,4 +1,5 @@
-.activated, .disabled{
+.activated,
+.disabled {
   min-height: 45px;
   font-size: x-large;
   padding: 16px;
@@ -12,16 +13,20 @@
   z-index: 999;
 }
 
+.disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
 
-.activated{
+.activated {
   color: #fff;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   height: 100vh;
   width: 100vw;
   cursor: pointer;
 }
 
-.icon{
+.icon {
   min-width: 36px;
   display: flex;
   align-items: center;
@@ -34,7 +39,7 @@
   flex-direction: row;
 }
 
-.items{
+.items {
   margin-right: 8px;
   display: flex;
   flex-direction: column;
@@ -43,4 +48,9 @@
   flex: 1;
 }
 
-
+nav {
+  background-color: #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
