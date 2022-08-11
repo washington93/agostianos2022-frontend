@@ -81,12 +81,8 @@ p {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  max-width: 100%;
+  max-width: 250px;
   overflow-x: scroll;
-}
-
-.images-da-casa img {
-  max-height: 100%;
 }
 
 .organizadores ul li {
@@ -112,6 +108,33 @@ p {
 .descricao strong {
   color: #2c7aaf;
 }
+
+#local{
+  text-align: center;
+}
+
+.sobre-local {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background-color: #90c6fa;
+}
+
+.sobre-local h4{
+  color: #fdfdfd;
+}
+
+.images-da-casa {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+footer{
+  text-align: center;
+}
+
 
 // media query
 @media (max-width: 800px) {

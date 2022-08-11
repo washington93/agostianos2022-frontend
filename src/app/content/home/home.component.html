@@ -34,7 +34,7 @@
       <div class="organizadores col">
         <h4>Organizadores</h4>
         <div class="organizadores-container">
-          <ul>
+          <ul class="col-6">
             <ng-container *ngFor="let item of organizadores; let i = index">
               <li *ngIf="i <= 4">
                 <label style="width: 100%">
@@ -54,7 +54,7 @@
               </li>
             </ng-container>
           </ul>
-          <ul>
+          <ul class="col-6">
             <ng-container *ngFor="let item of organizadores; let i = index">
               <li *ngIf="i > 4">
                 <label style="width: 100%">
@@ -79,7 +79,7 @@
     </section>
     <section id="local" class="row">
       <div class="sobre-local col">
-        <h2>Local</h2>
+        <h4>Local</h4>
         <p>
           A festá ocorrerá em uma casa de praia em pirambuzios. Ficaremos a 2
           minutos da areia praia e contaremos com a seguinte estrutura:
@@ -91,6 +91,7 @@
           <li>Currasqueira</li>
           <li>Vaga para 3 carros</li>
         </ol>
+        <br />
         <div class="images-da-casa">
           <img src="assets/imgs/casa-de-praia/01.jpeg" width="150" />
           <img src="assets/imgs/casa-de-praia/02.jpeg" width="150" />
@@ -102,6 +103,8 @@
           <img src="assets/imgs/casa-de-praia/08.jpeg" width="150" />
           <img src="assets/imgs/casa-de-praia/09.jpeg" width="150" />
         </div>
+        <br />
+        <br />
       </div>
       <div class="mapa col map-responsive">
         <iframe
@@ -113,6 +116,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
+        teste
       </div>
     </section>
     <footer>Rodapé</footer>
