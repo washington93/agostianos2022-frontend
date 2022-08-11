@@ -1,66 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 
-
-const greatDay = '09/03/2022 19:00:00';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-
-  seconds: string | number = 1000;
-  minutes: any;
-  hours: any;
-  days: any;
-
-  goalIsComplete: boolean = false;
-
   constructor() {}
 
-  ngOnInit(): void {
-    this.initTimer();
-  }
+  ngOnInit(): void {}
 
-  initTimer() {
-    const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24;
-
-    let today: Date | string = new Date(),
-      dd = String(today.getDate()).padStart(2, '0'),
-      mm = String(today.getMonth() + 1).padStart(2, '0'),
-      yyyy = today.getFullYear(),
-      dataAgostianos = greatDay;
-
-    today = mm + '/' + dd + '/' + yyyy;
-
-    const countDown = new Date(dataAgostianos).getTime(),
-      x = setInterval(() => {
-        const now = new Date().getTime(),
-          distance = countDown - now;
-
-        this.days = Math.floor(distance / day)
-          .toString()
-          .padStart(2, '0');
-        this.hours = Math.floor((distance % day) / hour)
-          .toString()
-          .padStart(2, '0');
-        this.minutes = Math.floor((distance % hour) / minute)
-          .toString()
-          .padStart(2, '0');
-        this.seconds = Math.floor((distance % minute) / second)
-          .toString()
-          .padStart(2, '0');
-
-        //do something later when date is reached
-        if (distance < 0) {
-          this.goalIsComplete = true;
-          clearInterval(x);
-        }
-      }, 0);
-  }
+  organizadores = [
+    {
+      nome: 'Elias Junior',
+      responsavelPor: 'Organização',
+      img: 'assets/imgs/organizadores/junior.jpeg',
+    },
+    {
+      nome: 'Eduarda Limo',
+      responsavelPor: 'Local',
+      img: 'assets/imgs/avatar.png',
+    },
+    {
+      nome: 'José Gilva',
+      responsavelPor: 'Local',
+      img: 'assets/imgs/organizadores/gilvan.jpeg',
+    },
+    {
+      nome: 'Larissa Tavares',
+      responsavelPor: 'Brincadeiras e Jogos',
+      img: 'assets/imgs/organizadores/larissa.jpeg',
+    },
+    {
+      nome: 'Leandro Fortaleza',
+      responsavelPor: 'Site',
+      img: 'assets/imgs/avatar.png',
+    },
+    {
+      nome: 'Natane Tuany',
+      responsavelPor: 'Organização & Ornamentação',
+      img: 'assets/imgs/organizadores/natane.jpeg',
+    },
+    {
+      nome: 'Ricardo Barbosa',
+      responsavelPor: 'Brincadeiras e Jogos',
+      img: 'assets/imgs/avatar.png',
+    },
+    {
+      nome: 'Thiago Costa',
+      responsavelPor: 'Organização & Ornamentação',
+      img: 'assets/imgs/avatar.png',
+    },
+    {
+      nome: 'Washington da Silva',
+      responsavelPor: 'Site',
+      img: 'assets/imgs/avatar.png',
+    },
+  ];
 }

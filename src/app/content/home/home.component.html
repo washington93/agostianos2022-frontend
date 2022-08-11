@@ -30,123 +30,51 @@
       <div class="oq-preparamos col">
         <h4>O que preparamos para esse ano?</h4>
         <br />
-        <div class="row">
-          <ol class="col-6">
-            <li>Comida</li>
-            <li>Bebida</li>
-            <li>Brincadeiras</li>
-          </ol>
-          <ol class="col-6">
-            <li>Comida</li>
-            <li>Bebida</li>
-            <li>Brincadeiras</li>
-          </ol>
-        </div>
       </div>
       <div class="organizadores col">
         <h4>Organizadores</h4>
-        <ul>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Elias Junior</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Eduarda Lino</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>José Gilva</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Larissa Tavares</strong>
-            </span>
-          </li>
-
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Leandro Fortaleza</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Natane Tuany</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Ricardo Barbosa</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Thiago Costa</strong>
-            </span>
-          </li>
-          <li>
-            <img
-              src="assets/imgs/avatar.png"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-            />
-            <span>
-              <strong>Washington da Silva Tavares</strong>
-            </span>
-          </li>
-        </ul>
+        <div class="organizadores-container">
+          <ul>
+            <ng-container *ngFor="let item of organizadores; let i = index">
+              <li *ngIf="i <= 4">
+                <label style="width: 100%">
+                  <img
+                    [src]="item.img"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                  />
+                  <br />
+                  <div class="descricao">
+                    <strong>{{ item?.nome }}</strong
+                    ><br />
+                    <span>{{ item?.responsavelPor }}</span>
+                  </div>
+                </label>
+              </li>
+            </ng-container>
+          </ul>
+          <ul>
+            <ng-container *ngFor="let item of organizadores; let i = index">
+              <li *ngIf="i > 4">
+                <label style="width: 100%">
+                  <img
+                    [src]="item.img"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                  />
+                  <br />
+                  <div class="descricao">
+                    <strong>{{ item?.nome }}</strong
+                    ><br />
+                    <span>{{ item?.responsavelPor }}</span>
+                  </div>
+                </label>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
       </div>
     </section>
     <section id="local" class="row">
