@@ -1,74 +1,78 @@
 <app-navbar></app-navbar>
-<main>
-  <div class="banner">
-    <h2>Login</h2>
-  </div>
-  <form [formGroup]="loginForm">
-    <!-- Email input -->
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">E-mail</span>
-      </div>
-      <input
-        type="email"
-        class="form-control"
-        formControlName="usuario"
-        placeholder="email@dominio.com"
-        aria-label="email@dominio.com"
-        aria-describedby="basic-addon1"
-        (click)="pop = ''"
-      />
+<div class="container" >
+  <main>
+    <div class="banner">
+      <h2>Login</h2>
     </div>
+    <form [formGroup]="loginForm">
+      <!-- Email input -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">E-mail</span>
+        </div>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="usuario"
+          placeholder="email@dominio.com"
+          aria-label="email@dominio.com"
+          aria-describedby="basic-addon1"
+          (click)="pop = ''"
+        />
+      </div>
 
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Senha</span>
-      </div>
-      <input
-        [type]="mostrarSenha ? 'text' : 'password'"
-        class="form-control"
-        placeholder="Senha"
-        aria-label="Senha"
-        formControlName="senha"
-        aria-describedby="basic-addon1"
-        (click)="pop = ''"
-      />
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">
-          <fa-icon
-            id="mostrar-senha"
-            [icon]="mostrarSenha ? olhoCortado : olho"
-            (click)="mostrarSenha = !mostrarSenha"
-          ></fa-icon>
-        </span>
-      </div>
-    </div>
-    <div class="alert" *ngIf="pop">
-      <strong>{{ pop }}</strong>
-    </div>
-    <button class="btn-primary" (click)="login()">Entrar</button>
-  </form>
-  <br />
-  <br />
-
-  <footer>
-    <div class="row mb-4">
-      <div class="col d-flex justify-content-center">
-        <!-- Checkbox -->
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            [(ngModel)]="lembreme"
-          />
-          <label class="form-check-label" for="form2Example31">
-            Lembre-me
-          </label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Senha</span>
+        </div>
+        <input
+          [type]="mostrarSenha ? 'text' : 'password'"
+          class="form-control"
+          placeholder="Senha"
+          aria-label="Senha"
+          formControlName="senha"
+          aria-describedby="basic-addon1"
+          (click)="pop = ''"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon3">
+            <fa-icon
+              id="mostrar-senha"
+              [icon]="mostrarSenha ? olhoCortado : olho"
+              (click)="mostrarSenha = !mostrarSenha"
+            ></fa-icon>
+          </span>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <label style="width: 100%; text-align: center">Esqueci aaminha senha</label>
-    </div>
-  </footer>
-</main>
+      <div class="alert" *ngIf="pop">
+        <strong>{{ pop }}</strong>
+      </div>
+      <button class="btn-primary" (click)="login()">Entrar</button>
+    </form>
+    <br />
+    <br />
+
+    <footer>
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [(ngModel)]="lembreme"
+            />
+            <label class="form-check-label" for="form2Example31">
+              Lembre-me
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label style="width: 100%; text-align: center"
+          >Esqueci minha senha</label
+        >
+      </div>
+    </footer>
+  </main>
+</div>

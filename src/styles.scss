@@ -4,6 +4,12 @@ $cor1: orange;
   color: #100F0F;
 }
 
+body{
+  // background-image: url("../../../assets/imgs/bg.jpg");
+  background-image: url("../src/assets/imgs/bg.jpg");
+  background-size: 50% auto;
+}
+
 .container {
   padding: 0;
   margin: 0;

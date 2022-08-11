@@ -17,6 +17,7 @@ ol {
 h1 {
   font-family: disney;
   font-size: xxx-large;
+  margin-bottom: -16px;
 }
 
 h3,
@@ -47,6 +48,21 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px 0 0 8px;
+  margin: 8px;
+}
+
+.oq-preparamos{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px 0 0 8px;
+  margin: 8px;
+}
+
+.organizadores {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
 }
 
 .chamada h1 {
@@ -109,7 +125,7 @@ p {
   color: #2c7aaf;
 }
 
-#local{
+#local {
   text-align: center;
 }
 
@@ -122,7 +138,7 @@ p {
   background-color: #90c6fa;
 }
 
-.sobre-local h4{
+.sobre-local h4 {
   color: #fdfdfd;
 }
 
@@ -131,10 +147,9 @@ p {
   max-width: 100%;
 }
 
-footer{
+footer {
   text-align: center;
 }
-
 
 // media query
 @media (max-width: 800px) {
@@ -146,5 +161,9 @@ footer{
   #informacoes,
   #local {
     flex-direction: column;
+  }
+
+  .map-responsive {
+    min-height: 50vh;
   }
 }

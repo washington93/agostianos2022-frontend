@@ -1,7 +1,7 @@
 main {
-  max-width: 300px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #2c7aaf;
   padding: 8px;
+  border-radius: 8px;
 }
 
 form {
@@ -9,6 +9,23 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h2 {
+  color: #ededed;
+}
+
+.btn-primary,
+span {
+  background-color: #ededed;
+  color: #2c7aaf;
+}
+
+.container {
+  min-height: calc(100vh - 64px);
+  // background-color: #b1dddc;
+  background-image: url("../../../assets/imgs/bg.jpg");
+  background-size: 50% auto;
 }
 
 .banner {
@@ -31,4 +48,8 @@ form {
 
 #mostrar-senha:hover {
   opacity: 1;
+}
+
+input {
+  background-color: #ededed;
 }
