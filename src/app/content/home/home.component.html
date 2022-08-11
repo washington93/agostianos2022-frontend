@@ -1,41 +1,183 @@
 <app-navbar></app-navbar>
-<main>
-  <section id="temporizador">
-    <ng-container *ngIf="goalIsComplete; else temporizador">
-      <h2>Chegou o grande dia!!!</h2>
-    </ng-container>
-    <ng-template #temporizador>
-      <div class="temporizador-container">
-        <div id="countdown">
-          <ul>
-            <li>
-              <span id="days">{{ days }}</span
-              >DIAS
-            </li>
-            <li>
-              <span id="hours">{{ hours }}</span
-              >HORAS
-            </li>
-            <li>
-              <span id="minutes">{{ minutes }}</span
-              >MINUTOS
-            </li>
-            <li>
-              <span id="seconds">{{ seconds }}</span
-              >SEGUNDOS
-            </li>
-          </ul>
-        </div>
-        <!-- <div class="mickey-gif">
-          <img src="assets/gifs/mickey_black.gif">
-        </div> -->
+<div class="container">
+  <main>
+    <section id="topo" class="row">
+      <div class="chamada col">
+        <h1>Agostianos 2022</h1>
+        <label>03 de setembro</label>
+        <br />
+        <p>
+          Após dois anos sem festa finalmente estamos de volta, trazendo mais
+          uma vez um momento de confraternização entre amigos e amigos de
+          amigos.
+        </p>
+        <p>
+          Como de costume esse ano também teremos um evento temático, dessa vez
+          o tema será Disney (Clássicos, Marvel, Star Wars e etc). Por isso não
+          esqueça sua fantasia ou cospobre. Sim cospobre. Não se preocupem com
+          fantasia cara, pois o importante é estar presente para sentir o
+          carinho dessa galera massa.
+        </p>
+        <p>Nos vemos lá!</p>
       </div>
-    </ng-template>
-  </section>
-  <section id="local">
+      <div class="col">
+        <img src="assets/imgs/fortaleza02.png" id="arte" />
+      </div>
+    </section>
+    <section id="informacoes" class="row">
+      <div class="oq-preparamos col">
+        <h2>O que preparamos para esse ano?</h2>
+        <ol>
+          <li>Comida</li>
+          <li>Bebida</li>
+          <li>Brincadeiras</li>
+          <li>Brindes</li>
+        </ol>
+      </div>
+      <div class="organizadores col">
+        <h2>Organizadores</h2>
+        <ul>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Elias Junior</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Eduarda Lino</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>José Gilva</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Larissa Tavares</strong>
+            </span>
+          </li>
 
-  </section>
-  <section id="recompensas">
-
-  </section>
-</main>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Leandro Fortaleza</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Natane Tuany</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Ricardo Barboa</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Thiago Costa</strong>
+            </span>
+          </li>
+          <li>
+            <img
+              src="assets/imgs/avatar.png"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+            <span>
+              <strong>Washington da Silva Tavares</strong>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="local" class="row">
+      <div class="sobre-local col">
+        <h2>Local</h2>
+        <p>
+          A festá ocorrerá em uma casa de praia em pirambuzios. Ficaremos a 2
+          minutos da areia praia e contaremos com a seguinte estrutura:
+        </p>
+        <ol>
+          <li>3 Banheiros</li>
+          <li>7 Quartos</li>
+          <li>Varanda</li>
+          <li>Currasqueira</li>
+          <li>Vaga para 3 carros</li>
+        </ol>
+        <div class="images-da-casa">
+          <img src="assets/imgs/casa-de-praia/01.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/02.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/03.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/04.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/05.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/06.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/07.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/08.jpeg" width="150" />
+          <img src="assets/imgs/casa-de-praia/09.jpeg" width="150" />
+        </div>
+      </div>
+      <div class="mapa col map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.056426691325!2d-35.11539!3d-5.986968999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zNcKwNTknMTMuMSJTIDM1wrAwNic1NS40Ilc!5e0!3m2!1sen!2sbr!4v1660243763818!5m2!1sen!2sbr"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+    <footer>Rodapé</footer>
+  </main>
+</div>

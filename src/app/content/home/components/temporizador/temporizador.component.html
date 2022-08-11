@@ -1,0 +1,30 @@
+<ng-container *ngIf="goalIsComplete; else temporizador">
+  <h2>Chegou o grande dia!!!</h2>
+</ng-container>
+<ng-template #temporizador>
+  <div class="temporizador-container">
+    <div id="countdown">
+      <ul>
+        <li>
+          <span id="days">{{ days }}</span
+          >DIAS
+        </li>
+        <li>
+          <span id="hours">{{ hours }}</span
+          >HORAS
+        </li>
+        <li>
+          <span id="minutes">{{ minutes }}</span
+          >MINUTOS
+        </li>
+        <li>
+          <span id="seconds">{{ seconds }}</span
+          >SEGUNDOS
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="mickey-gif">
+          <img src="assets/gifs/mickey_black.gif">
+        </div> -->
+  </div>
+</ng-template>

@@ -1,91 +1,68 @@
-// Temporizador
-.temporizador-container {
-  color: #333;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 250px;
-  height: 48px;
-  border-radius: 8px;
-  padding: 4px;
-  position: absolute;
-  bottom: 0;
-  right: 24px;
-  display: flex;
+main {
+  max-width: 800px;
 }
 
-#temporizador * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
-    sans-serif;
-  overflow: hidden;
-}
-
-#temporizador {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  background-color: bisque;
-}
-
-#temporizador h1 {
-  font-weight: normal;
-  letter-spacing: 13px;
-  text-transform: uppercase;
-}
-
-#temporizador li {
-  display: inline-block;
-  font-size: 9px;
+ul,
+ol {
   list-style-type: none;
-  padding: 4px;
-  text-transform: uppercase;
 }
 
-#temporizador li span {
-  display: block;
-  font-size: 12px;
-}
-
-#temporizador .headline {
-  font-size: 20px;
-  font-weight: normal;
-  letter-spacing: 13px;
-  text-transform: uppercase;
-}
-
+#topo,
+#informacoes,
 #local {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  background-color: rgb(204, 232, 204);
+  flex-direction: row;
 }
 
-#recompensas {
+#arte{
+  width: 300px;
+  max-width: 100%;
+}
+
+.chamada {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex: 1;
-  min-height: 100vh;
-  width: 100%;
+  justify-content: center;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
   position: relative;
-  background-color: rgb(240, 202, 249);
+  height: 0;
 }
 
-.mickey-gif {
-  height: 50px;
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-.mickey-gif img {
+.images-da-casa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.images-da-casa img {
   max-height: 100%;
-  transform: scaleX(-1);
+}
+
+// media query
+@media (max-width: 800px) {
+  main {
+    width: 100%;
+  }
+
+  #topo,
+  #informacoes,
+  #local {
+    flex-direction: column;
+  }
 }
